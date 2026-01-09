@@ -5,18 +5,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller
-
+@RestController
 public class Control {
 	@Autowired
 	Services s;
 	
 	
 	
-	@RequestMapping("/home")
-	public String home() {
+	@GetMapping("/home")
+	public ResponseEntity<String> home() {
 		//s.Save();
-		return "home";
+		return ResponseEntity.ok("heloow vamsi run");
 	}
 
 }
